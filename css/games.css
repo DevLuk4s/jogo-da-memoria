@@ -1,8 +1,8 @@
 body {
-    background-image: url('/img/Um\ Bom\ Lugar\ Pra\ Pensar.jpg');
+    background-image: url(../img/background.jpg);
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
 }
 
 .grid {
@@ -11,7 +11,7 @@ body {
     grid-template-columns: repeat(5, 1fr);
     width: 100%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 100px auto;
 }
 
 .card {
@@ -23,7 +23,7 @@ body {
     transform-style: preserve-3d;
 }
 
-.card:hover {
+.reveal-card {
     transform: rotateY(180deg);
 }
 
@@ -33,13 +33,13 @@ body {
     position: absolute;
     background-size: cover;
     background-position: center;
-    backface-visibility: hidden;
 }
 
 .front {
-    background-image: url(/img/Design\ sem\ nome\ \(1\).png);
+    transform: rotateY(180deg);
 }
 
 .back {
-    background-image: url(/img/Design\ sem\ nome\ \(7\).png);
+    background-image: url(/img/capa.png);
+    backface-visibility: hidden;
 }
