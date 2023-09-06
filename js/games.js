@@ -1,4 +1,6 @@
 const grid = document.querySelector('.grid')
+const spawnPlayer = document.querySelector('.player')
+const timer = document.querySelector('.timer')
 
 const personagens = [
     'mordecai',
@@ -26,7 +28,8 @@ const checkEndgame = () => {
     const disableCards = document.querySelectorAll('.disable-card')
 
     if(disableCards.length == 20) {
-        alert('Voce venceu')
+        clearInterval(this.loop)
+        alert(`Parabens ${spawnPlayer.innerHTML} seu tempo foi de ${timer.innerHTML} segundos`)
     }
 }
 
@@ -51,7 +54,7 @@ const checkCard = () => {
             primeiraCard = ''
             segundoCard = ''
 
-        }, 500)
+        }, 1000)
     }
 }
 
@@ -99,4 +102,18 @@ const loadgame = () => {
     })
 }
 
-loadgame()
+const startTime = () => {
+    this.loop = setInterval(() => {
+
+        const segundos = +timer.innerHTML
+        timer.innerHTML = segundos + 1
+
+    }, 1000)
+}
+
+window.onload = () => {
+
+    spawnPlayer.innerHTML = localStorage.getItem('player')
+    startTime()
+    loadgame()
+}
