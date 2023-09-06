@@ -68,7 +68,7 @@ header {
 }
 
 .back {
-    background-image: url(/img/capa.png);
+    background-image: url(../img/capa.png);
     backface-visibility: hidden;
 }
 
